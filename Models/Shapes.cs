@@ -12,8 +12,18 @@ namespace ShapesConsoleApp.Models
         public int Xpoint { get; set; }
         public int Ypoint { get; set; }
 
-        public int Width { get; set; }
-        public int Height { get; set; }
+        private int _height, _width;
+        public int Height
+        {
+            get => _height;
+            set => _height = Math.Abs(value);
+        }
+
+        public int Width
+        {
+            get => _width;
+            set => _width = Math.Abs(value);
+        }
 
         public Rectangle(int xpoint = 0, int ypoint = 0, int width = 0, int height = 0)
         {
@@ -31,7 +41,13 @@ namespace ShapesConsoleApp.Models
     {
         public int Xpoint { get; set; }
         public int Ypoint { get; set; }
-        public int Size { get; set; }
+
+        private int _size; 
+        public int Size 
+        {
+            get => _size;
+            set => _size = Math.Abs(value); 
+        }
 
         public Square(int xpoint = 0, int ypoint = 0, int size = 0)
         {
@@ -48,8 +64,19 @@ namespace ShapesConsoleApp.Models
     {
         public int Xpoint { get; set; }
         public int Ypoint { get; set; }
-        public int DiameterH { get; set; }
-        public int DiameterV { get; set; }
+        private int _diameterh, _diameterw;
+
+        public int DiameterH 
+        {
+            get => _diameterh;
+            set => _diameterh = Math.Abs(value);
+        }
+
+        public int DiameterV 
+        {
+            get => _diameterw;
+            set => _diameterw = Math.Abs(value);
+        }
 
         public Ellipse(int xpoint = 0, int ypoint = 0, int diameterh = 0, int diameterv = 0)
         {
@@ -67,7 +94,13 @@ namespace ShapesConsoleApp.Models
     {
         public int Xpoint { get; set; }
         public int Ypoint { get; set; }
-        public int Size { get; set; }
+
+        private int _size;
+        public int Size 
+        {
+            get => _size;
+            set => _size = Math.Abs(value);
+        }
 
         public Circle(int xpoint = 0, int ypoint = 0, int size = 0)
         {
@@ -78,18 +111,29 @@ namespace ShapesConsoleApp.Models
 
         public string PrintProperties()
             => ShapeHelpers.BuildString($"Circle ({Xpoint},{Ypoint}) size = {Size}");
-
     }
 
     public class TextBox : IShape
     {
         public int Xpoint { get; set; }
         public int Ypoint { get; set; }
-        public int Height { get; set; }
-        public int Width { get; set; }
+
+        private int _height,_width;
+        public int Height 
+        {
+            get => _height;
+            set => _height = Math.Abs(value);
+        }
+
+        public int Width 
+        { 
+            get => _width;
+            set => _width = Math.Abs(value);
+        }
+
         public string Text { get; set; }
 
-        public TextBox(int xpoint = 0, int ypoint = 0, int height = 0, int width = 0, string text = "sample text")
+        public TextBox(int xpoint = 0, int ypoint = 0, int width = 0, int height = 0, string text = "sample text")
         {
             Xpoint = xpoint;
             Ypoint = ypoint;
