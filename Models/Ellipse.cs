@@ -4,8 +4,8 @@ namespace ShapesConsoleApp.Models
 {
     public class Ellipse : IShape
     {
-        public int Xpoint { get; set; }
-        public int Ypoint { get; set; }
+        public int Xcoordinate { get; set; }
+        public int Ycoordinate { get; set; }
         private int _diameterh, _diameterw;
 
         public int DiameterH 
@@ -20,15 +20,15 @@ namespace ShapesConsoleApp.Models
             set => _diameterw = Math.Abs(value);
         }
 
-        public Ellipse(int xpoint = 0, int ypoint = 0, int diameterh = 0, int diameterv = 0)
+        public Ellipse(int xcoordinate = 0, int ycoordinate = 0, int diameterh = 0, int diameterv = 0)
         {
-            Xpoint = xpoint;
-            Ypoint = ypoint;
+            Xcoordinate = xcoordinate;
+            Ycoordinate = ycoordinate;
             DiameterH = diameterh;
             DiameterV = diameterv;
         }
 
         public string PrintProperties()
-            => ShapeHelpers.BuildString($"Ellipse ({Xpoint},{Ypoint}) diameterH = {DiameterH} diameterV = {DiameterV}");
+            => ShapeHelpers.BuildString($"Ellipse ({Xcoordinate},{Ycoordinate}) diameterH = {DiameterH} diameterV = {DiameterV}");
     }
 }

@@ -3,8 +3,8 @@ namespace ShapesConsoleApp.Models
 {
     public interface IShape
     {
-        public int Xpoint { get; set; }
-        public int Ypoint { get; set; }
+        public int Xcoordinate { get; set; }
+        public int Ycoordinate { get; set; }
 
         public string PrintProperties();
     }

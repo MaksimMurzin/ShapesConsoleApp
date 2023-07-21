@@ -4,8 +4,8 @@ namespace ShapesConsoleApp.Models
 {
     public class Circle : IShape
     {
-        public int Xpoint { get; set; }
-        public int Ypoint { get; set; }
+        public int Xcoordinate { get; set; }
+        public int Ycoordinate { get; set; }
 
         private int _size;
         public int Size 
@@ -14,14 +14,14 @@ namespace ShapesConsoleApp.Models
             set => _size = Math.Abs(value);
         }
 
-        public Circle(int xpoint = 0, int ypoint = 0, int size = 0)
+        public Circle(int xcoordinate = 0, int ycoordinate = 0, int size = 0)
         {
-            Xpoint = xpoint;
-            Ypoint = ypoint;
+            Xcoordinate = xcoordinate;
+            Ycoordinate = ycoordinate;
             Size = size;
         }
 
         public string PrintProperties()
-            => ShapeHelpers.BuildString($"Circle ({Xpoint},{Ypoint}) size = {Size}");
+            => ShapeHelpers.BuildString($"Circle ({Xcoordinate},{Ycoordinate}) size = {Size}");
     }
 }
