@@ -6,18 +6,18 @@ namespace ShapesConsoleApp.Models
     {
         public int Xcoordinate { get; set; }
         public int Ycoordinate { get; set; }
-        private int _diameterh, _diameterw;
+        private int _diameterH, _diameterV;
 
         public int DiameterH 
         {
-            get => _diameterh;
-            set => _diameterh = Math.Abs(value);
+            get => _diameterH;
+            set => _diameterH = Math.Abs(value);
         }
 
         public int DiameterV 
         {
-            get => _diameterw;
-            set => _diameterw = Math.Abs(value);
+            get => _diameterV;
+            set => _diameterV = Math.Abs(value);
         }
 
         public Ellipse(int xcoordinate = 0, int ycoordinate = 0, int diameterh = 0, int diameterv = 0)
